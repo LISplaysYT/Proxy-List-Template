@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Cards Animation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      text-decoration: none!important;
+      overflow: hidden;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+      overflow: hidden;
+      justify-content: center;
+      margin-bottom: 20px;
+      text-decoration: none!important;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      background-color: #000000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none!important;
+    }
+
+    .button:hover {
+      background-color: #f0f0f0;
+      text-decoration: none!important;
+      border-color: #ff0044;
+      color: #007BFF;
+    }
+
+    .button.active {
+      background-color:#ff0044;
+      color: white;
+      text-decoration: none!important;
+      border-color: #ff0044;
+      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    }
+
+    .cards-container {
+      display: none;
+      gap: 20px;
+      margin: 0 auto;
+      padding: 20px;
+      text-decoration: none!important;
+      max-width: 1000px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .cards-container.active {
+      display: flex;
+      text-decoration: none!important;
+      opacity: 1;
+      animation: levitateDown 1s ease-out;
+    }
+
+    .card {
+      height: 100px;
+      width: 300px;
+      text-decoration: none!important;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #be2273;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card a {
+        text-decoration: none!important;
+        color: black;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      text-decoration: none!important;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes levitateDown {
+      0% {
+        opacity: 0;
+        transform: translateY(var(--move-distance, 50px));
+      }
+      50% {
+        opacity: 0.5;
+        transform: translateY(calc(var(--move-distance, 50px) / 2));
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Adjust animation distance based on screen size */
+    @media (max-width: 768px) {
+      :root {
+        --move-distance: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --move-distance: 100px;
+      }
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      text-decoration: none!important;
+      color: #666;
+    }
+    .open-button {
+            background-color: #720720;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 24px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 250px;
+            height: 40px;
+        }
+        .proxy-url {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+            cursor: text;
+            position: relative;
+            z-index: 1;
+        }
+  </style>
+</head>
+<body>
+    <center><h1>Proxy List</h1></center>
+    <div class="button-container">
+    <button class="button" data-cards="Boredom">Boredom Arcade</button>
+    <button class="button" data-cards="Interstellar">Interstellar</button>
+    <button class="button" data-cards="Utopia">Utopia</button>
+  </div>
+
+  <div id="Boredom" class="cards-container">
+    <div class="card"><p class=proxy-url">zeelix.xyz</p><a href="https://zeelix.xyz"><button class="open-button">Open Proxy</button></a></div>
+    <div class="card"><p class=proxy-url">boredomarcade.xyz</p><a href="https://boredomarcade.xyz"><button class="open-button">Open Proxy</button></a></div>
+    <div class="card"><p class=proxy-url">boredom.benrogo.net</p><a href="https://boredom.benrogo.net"><button class="open-button">Open Proxy</button></a></div>
+  </div>
+
+  <div id="Interstellar" class="cards-container">
+    <div class="card"><p class=proxy-url">interstellar-two-beta.vercel.app/</p><a href="https://interstellar-two-beta.vercel.app/"><button class="open-button">Open Proxy</button></a></div>
+    <div class="card"><p class=proxy-url">gointerstellar.app</p><a href="https://gointerstellar.app"><button class="open-button">Open Proxy</button></a></div>
+    <div class="card"><p class=proxy-url">clever.com.cerrajeriasanmiguel.com</p><a href="https://clever.com.cerrajeriasanmiguel.com/"><button class="open-button">Open Proxy</button></a></div>
+  </div>
+  <div id="Utopia" class="cards-container">
+    <div class="card"><p class=proxy-url">facts.craft.michiganbowling.com</p><a href="https://facts.craft.michiganbowling.com "><button class="open-button">Open Proxy</button></a></div>
+    <div class="card"><p class=proxy-url">piano.rules.placentavitamin.com</p><a href="https://piano.rules.placentavitamin.com"><button class="open-button">Open Proxy</button></a></div>
+    <div class="card"><p class=proxy-url">core.goal.challengepursuit.com</p><a href="https://core.goal.challengepursuit.com"><button class="open-button">Open Proxy</button></a></div>
+  </div>
+  <footer>
+    Click a button to display the corresponding cards.
+  </footer>
+
+  <script>
+    // Get all buttons and cards containers
+    const buttons = document.querySelectorAll('.button');
+    const cardsContainers = document.querySelectorAll('.cards-container');
+
+    buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove 'active' class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Add 'active' class to the clicked button
+    button.classList.add('active');
+
+    // Get the target cards container ID
+    const targetCardsId = button.getAttribute('data-cards');
+
+    // Remove 'active' class from all cards containers
+    cardsContainers.forEach(container => container.classList.remove('active'));
+
+    // Find the target container
+    const targetContainer = document.getElementById(targetCardsId);
+
+    // Only add 'active' if the container exists
+    if (targetContainer) {
+      targetContainer.classList.add('active');
+    }
+  });
+});
+  </script>
+
+</body>
+</html>
